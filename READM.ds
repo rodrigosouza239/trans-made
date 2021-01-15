@@ -1,0 +1,70 @@
+FORMULÁRIO												
+
+
+
+DADOS DA MADEIREIRA (SERRARIA)												
+RAZÃO SOCIAL:												
+ENDEREÇO:												
+CIDADE:												
+PROPRIETÁRIO (PESSOA QUE O MOTORISTA VAI PROCURAR):												
+TELEFONE PARA CONTATO:		
+
+
+												
+SOBRE FRETE												
+TIPO DE MADEIRA:												
+TIPO DE CAMINHÃO: [TRUCK / BI-TRUCK / CARRETA SIMPLES / CARRETA TRUCADA / VANDERLEIA / BI-TREM / RODO-TREM]												
+PESO TOTAL DA CARGA:												
+QUANTIDADE DE M3:												
+VALOR FRETE POR M3:						
+
+
+												
+SOBRE DESPESAS DO FRETE												
+LIVRE DAS DESPESAS:	[SIM / NÃO]		QUANDO NÃO									
+PAGAR CARREGO: [SIM / NÃO]												
+PAGAR ICMS DE FRETE: [SIM / NÃO]												
+ADIATAMENTO: [SIM / NÃO]			QUANDO SIM									
+VALOR DO ADIANTAMENTO:												
+								VALIDAÇÃO DE LOGIN				
+OBSERVAÇÃO:								CNPJ + SENHA DE 4 DIGITOS				
+
+
+
+
+
+
+
+												
+MOTORISTA (TRANSPORTADOR)												
+NOME:												
+TIPO DE CAMINHÃO: [TRUCK / BI-TRUCK / CARRETA SIMPLES / CARRETA TRUCADA / VANDERLEIA / BI-TREM / RODO-TREM]												
+QUAIS ESTADOS TEM PREFERENCIA PARA CARREGAR?: [UF]  (PODE ESCOLHER MAIS DE 1 ESTADO)												
+PESO TOTAL DA CARGA:												
+JÁ CARREGOU MADEIRA? [SIM / NÃO]												
+QUAIS EMPRESAS JÁ CARREGOU (REFERENCIAS)?												
+TELEFONE PARA CONTATO:												
+												
+OBSERVAÇÕES:												
+							VALIDAÇÃO DE LOGIN					
+							CPF + SENHA DE 4 DIGITOS					
+												
+
+
+
+
+            
+            						
+ADMNISTRADOR												
+												
+TER ACESSO AS 2 INFORMAÇÕES												
+IREI LIBERAR OS DADOS DA SERRARIA PARA O MOTORISTA APÓS CONFIRMAÇÃO DE PAGAMENTO DA COMISSÃO.												
+												
+												
+												
+												
+												
+							VALIDAÇÃO DE LOGIN					
+							CPF + SENHA DE 8 DIGITOS					
+												
+												
