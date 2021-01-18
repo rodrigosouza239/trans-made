@@ -61,13 +61,30 @@ export default function InputsFormRegisterFrete() {
                  value={madeira}
                  onChangeText={setMadeira}
            />
-           <TextInput   style={styles.Formcontainer}
-                placeholder="TIPO DE CAMINHÃO"
-                placeholderTextColor="#7C7979"
-                 textContentType="emailAddress"
-                 value={caminhao}
-                 onChangeText={setCaminhao}
-           />
+            <Picker 
+        selectedValue={caminhao}
+         style={{  backgroundColor:'#F0F0F5',
+         width:320,
+         height:50,
+         marginBottom:20,
+         paddingHorizontal:20,
+         justifyContent:'space-between',
+         alignItems:'center',
+     
+         fontSize:16,
+         fontWeight:'bold',
+         color:'#7C7979' }}
+         onValueChange={(itemValue:any) => setCaminhao(itemValue)}
+        >
+          <Picker.Item  label="TIPO DE CAMINHÃO" value="mc" />
+          <Picker.Item label="Truck" value="Truck" />
+          <Picker.Item label="BiTruck" value="BiTruck" />
+          <Picker.Item label="Carreta simples" value="Carreta Simples"/>
+          <Picker.Item label="Carreta ls" value="Carreta Ls" />
+          <Picker.Item label="Carreta BiTrem" value="Carreta BiTrem" />
+          <Picker.Item label="Carreta Vanderleia" value="Carreta Vanderleia"/>
+          <Picker.Item label="Carreta Rodotrem" value="Carreta Rodotrem" />
+        </Picker>
         <TextInput 
                 style={styles.Formcontainer}
                 placeholder="PESO TOTAL DA CARGA"

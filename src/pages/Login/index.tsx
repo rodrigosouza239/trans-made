@@ -1,6 +1,6 @@
 
 import React,{useState} from 'react';
-import { StyleSheet, Text, View,TouchableOpacity,TextInput,ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity,TextInput,ActivityIndicator,StatusBar} from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import InputsForm from '../../components/InputsForm';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Api from '../../database/database';
 
 import { useNavigation } from '@react-navigation/native';
+import Input from '../../components/InputsForm';
 
 
 export default function Login() {
@@ -15,6 +16,7 @@ export default function Login() {
      const navigation = useNavigation();
      const[loading, setLoading] = useState(false);
      const [ cpf, setCpf ] = useState('');
+    const [ cpf1, setCpf1 ] = useState('');
     const [ password, setPassword ] = useState('');
 
      function hadleNavigateToLoginMADEIREIRAPage(){
@@ -27,7 +29,7 @@ export default function Login() {
         if(cpf != '' && password != ''){
             
             let json = await Api.signInTransportador(cpf,password);
-            if(json.token) {
+            if(json) {
                 navigate('Home')
             } else{
                 alert('E-mail ou senha errads')
@@ -47,28 +49,40 @@ export default function Login() {
         function hadleNavigateToAdminLogin(){
           navigate('AdminLogin')
           }
+
+          function handlerCustom (value:string){
+              setCpf1(value);
+          }
+
+
   return (
     <>
     <LinearGradient colors={[
       '#fff', '#fff'
     ]} style={styles.container}>
+       <StatusBar />
           <View>
             <View style={styles.Logocontainer} >
               <Text style={styles.TextLogocontainer}>Acesse</Text>
             </View>
-            <TextInput 
-                style={styles.Formcontainer}
-                placeholder="CPF"
-                 placeholderTextColor="#7C7979"
-                 value={cpf}
-                 onChangeText={setCpf}
-           />
+
+            <Input
+             value={cpf}
+             mask="CPF"
+             maxLength={14}
+             onChangeText={setCpf}
+             placeholder="CPF"
+             placeholderTextColor="#7C7979"
+             inputMaskChange={(text: string)=> setCpf(text)}
+              />
+           
 
 <TextInput 
                 style={styles.Formcontainer}
                 placeholder="SENHA"
                 placeholderTextColor="#7C7979"
                 value={password}
+                secureTextEntry={true}
                  onChangeText={setPassword}
            />
 

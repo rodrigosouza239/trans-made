@@ -16,6 +16,7 @@ export default function Details() {
 
   return (
     <View style={styles.container}>
+       <StatusBar />
      <View style={{ backgroundColor:'#fafafc',
        borderWidth:1,
        borderColor: '#e6e6f0',
@@ -25,6 +26,7 @@ export default function Details() {
        paddingHorizontal:20,
        width:330,
        overflow: 'hidden'}}>
+       
        <View style={{flexDirection:'row', justifyContent: 'space-between',marginTop:10,}} >
          <Text style={{fontSize: 14, lineHeight:24, color: '#737380',textAlign:'left'}} >Tipo de Madeira:</Text>
          <Text style={{fontSize: 14, lineHeight:24, color: '#737380',textAlign:'left'}} >{madeireira.madeira}</Text>
@@ -67,7 +69,6 @@ export default function Details() {
          <Text style={{fontSize: 14, lineHeight:24, color: '#fff'}} >Entrar em Contato</Text>
        </TouchableOpacity>
     
-      <StatusBar style="auto" />
     </View>
   );
 }

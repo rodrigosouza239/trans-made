@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import api from '../database/api';
 import { Feather as Icon } from '@expo/vector-icons';
 import {Picker} from '@react-native-picker/picker';
+import Input from '../components/InputsForm';
 
 
 
@@ -114,27 +115,34 @@ export default function InputsFormMadeireira() {
                  value={proprietario}
                  onChangeText={setProprietario}
            />
-            <TextInput 
-                style={styles.Formcontainer}
-                placeholder="TELEFONE PARA CONTATO"
-                placeholderTextColor="#7C7979"
-                 value={telefone}
-                 onChangeText={setTelefone}
-           />
+           <Input
+             value={telefone}
+             mask="PHONE"
+             maxLength={14}
+             onChangeText={setTelefone}
+             placeholder="TELEFONE PARA CONTAT0"
+             placeholderTextColor="#7C7979"
+             inputMaskChange={(text: string)=> setTelefone(text)}
+              />
 
-<TextInput 
-                style={styles.Formcontainer}
-                placeholder="CNPJ"
-                placeholderTextColor="#7C7979"
-                 value={cnpj}
-                 onChangeText={setCnpj}
-           />
+
+<Input
+             value={cnpj}
+             mask="CNPJ"
+             maxLength={18}
+             onChangeText={setCnpj}
+             placeholder="CNPJ"
+             placeholderTextColor="#7C7979"
+             inputMaskChange={(text: string)=> setCnpj(text)}
+              />
+
 
 <TextInput 
                 style={styles.Formcontainer}
                 placeholder="CADASTRAR UMA SENHA"
                 placeholderTextColor="#7C7979"
                  value={password}
+                 secureTextEntry={true}
                 onChangeText={setPassword}
            />
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View,TouchableOpacity,ImageBackground } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity,ImageBackground,StatusBar } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 
 
@@ -23,6 +23,7 @@ export default function Register() {
 
   return (
     <ImageBackground resizeMode="cover" source={Backgroud}   style={styles.container}>
+      <StatusBar />
     <View>
       <View style={styles.Logocontainer} >
         <Icon name="truck" size={50} color="#FFF" />

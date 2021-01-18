@@ -84,7 +84,10 @@ export default function Routes() {
        name="InputsFormRegisterFrete" component={InputsFormRegisterFrete} />
 
 <Screen name="PageMadeireira" component={PageMadeireira} />
-<Screen name="Detail" component={Detail} />
+<Screen  options={{
+               headerShown:true,
+               header: () => <HeaderForm />
+             }}  name="Detail" component={Detail} />
       </Navigator>
     </NavigationContainer>
   );

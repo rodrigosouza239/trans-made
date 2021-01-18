@@ -4,6 +4,7 @@ import { StyleSheet, Text, View,TextInput,TouchableOpacity,ScrollView,SectionLis
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import api from '../database/api';
+import Input from '../components/InputsForm';
 
 import {Picker} from '@react-native-picker/picker';
 
@@ -111,34 +112,50 @@ export default function InputsFormRegister() {
           <Picker.Item label="NÃO" value="NÃO" />
         </Picker>
 <TextInput 
-                style={styles.Formcontainer}
+                style={{
+                  backgroundColor:'#F0F0F5',
+                  width:320,
+                  height:80,
+                  marginBottom:20,
+                  paddingHorizontal:20,
+                  justifyContent:'space-between',
+                  alignItems:'center',
+              
+                  fontSize:16,
+                  fontWeight:'700'
+                }}
                 placeholder="QUAIS EMPRESA JÁ CARREGOU (REFERENCIAS)?"
                 placeholderTextColor="#7C7979"
                  value={quaisempresas}
                  onChangeText={setQuaisempresas}
            />
 
-<TextInput 
-                style={styles.Formcontainer}
-                placeholder="TELEFONE PARA CONTATO"
-                placeholderTextColor="#7C7979"
-                 value={telefone}
-                 onChangeText={setTelefone}
-           />
+<Input
+             value={telefone}
+             mask="PHONE"
+             maxLength={14}
+             onChangeText={setTelefone}
+             placeholder="TELEFONE PARA CONTATO"
+             placeholderTextColor="#7C7979"
+             inputMaskChange={(text: string)=> setTelefone(text)}
+              />
 
-<TextInput 
-                style={styles.Formcontainer}
-                placeholder="CPF"
-                placeholderTextColor="#7C7979"
-                 value={cpf}
-                 onChangeText={setCpf}
-           />
+<Input
+             value={cpf}
+             mask="CPF"
+             maxLength={14}
+             onChangeText={setCpf}
+             placeholder="CPF"
+             placeholderTextColor="#7C7979"
+             inputMaskChange={(text: string)=> setCpf(text)}
+              />
 
 <TextInput 
                 style={styles.Formcontainer}
                 placeholder="PASSWORD"
                 placeholderTextColor="#7C7979"
                  value={password}
+                 secureTextEntry={true}
                  onChangeText={setPassword}
            />
 

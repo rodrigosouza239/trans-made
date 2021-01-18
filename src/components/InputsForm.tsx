@@ -1,30 +1,48 @@
 
 import React from 'react';
-import { StyleSheet, Text, View,TextInput } from 'react-native';
+import { StyleSheet, Text, View,TextInput, TextInputProps } from 'react-native';
+
+import { maskCnpj, maskCpf, maskphone } from '../utils/masks'
 
 
-interface HeaderProps{
- title: string;
+interface InputProps extends TextInputProps {
+   mask: "CPF" | "CNPJ" | "PHONE",
+   inputMaskChange: any;
 }
-1
-export default function InputsForm() {
-  return (
-    <View style={styles.container}>
-      
-        <TextInput 
-                style={styles.Formcontainer}
-                placeholder="CPF ou CNPJ"
-                 placeholderTextColor="#7C7979"
-           />
 
-<TextInput 
-                style={styles.Formcontainer}
-                placeholder="SENHA"
-                placeholderTextColor="#7C7979"
-           />
-    </View>
-  );
+const Input: React.FC<InputProps> = ({mask,inputMaskChange,... rest}) =>{
+
+  function handleChage(text: string){
+    if( mask == 'CPF' ){
+      const value = maskCpf(text);
+      inputMaskChange(value)
+    }
+       if(mask == 'CNPJ'){
+         const value = maskCnpj(text);
+         inputMaskChange(value)
+       }
+       if(mask == 'PHONE'){
+        const value = maskphone(text);
+        inputMaskChange(value)
+      }
+  }
+
+
+  return(
+
+    <>
+       <TextInput 
+       style={styles.Formcontainer}
+        {...rest}
+          onChangeText={text => handleChage(text)}
+        />
+    </>
+  )
+
+
 }
+
+export default Input;
 
 const styles = StyleSheet.create({
   container: {

@@ -39,7 +39,7 @@ Linking.openURL(`whatsapp://send?phone=5592993711994`)
 function handleToDetails(madeireira: any){
      navigation.navigate('Detail',{madeireira})
   }
-
+1
        return (
          <View style={styles.container} >
            

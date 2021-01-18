@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import { StyleSheet, Text, View,TouchableOpacity,TextInput,ActivityIndicator,KeyboardAvoidingView,Platform } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import { BorderlessButton } from 'react-native-gesture-handler';
-import InputsForm from '../../components/InputsForm';
+import Input from '../../components/InputsForm';
 
 import { useNavigation } from '@react-navigation/native';
 import Api from '../../database/database';
@@ -34,7 +34,7 @@ export default function LoginMadeireira() {
       }
       setLoading(false);
   }
-
+1
   return (
     <>
     <LinearGradient colors={[
@@ -45,14 +45,15 @@ export default function LoginMadeireira() {
               <Text style={styles.TextLogocontainer}>Acesse</Text>
             </View>
             <KeyboardAvoidingView enabled={Platform.OS === 'ios'} behavior="padding">
-            <TextInput 
-                style={styles.Formcontainer}
-                placeholder="CNPJ"
-                 placeholderTextColor="#7C7979"
-                 value={cnpj}
-                 onChangeText={setCnpj}
-           />
-
+            <Input
+             value={cnpj}
+             mask="CNPJ"
+             maxLength={18}
+             onChangeText={setCnpj}
+             placeholder="CNPJ"
+             placeholderTextColor="#7C7979"
+             inputMaskChange={(text: string)=> setCnpj(text)}
+              />
 <TextInput 
                 style={styles.Formcontainer}
                 placeholder="SENHA"
